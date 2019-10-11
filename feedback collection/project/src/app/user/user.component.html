@@ -1,0 +1,71 @@
+<div class="header" style="text-align:center">
+    <a href="/" id="logo">WELCOME</a>
+ 
+  </div>
+  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <body>
+      <ul class=a>
+          <form >
+          <li><a routerLink="/feedback">View Feedback</a></li>
+          <li><a routerLink="/first">Logout</a></li>
+          </form>
+        </ul> 
+      <div class="form-style-10">
+          <br>
+         <h1> <div class="w3-animate-zoom" >FEEDBACK</div></h1>
+          <br>
+          <form #f1="ngForm" (ngSubmit)="submitFeedback(f1)">
+              
+              <div class="form-group" >
+                      <div class="section"><span>1</span>Email</div>
+                  <div class="inner-wrap">
+                      Email:<br><input type=text name="email" required ngModel #email=ngModel minlength="5" class=form-control><br>
+                      <div *ngIf="email.touched && !email.valid">
+                              <div [hidden] *ngIf="email.errors.required">Username required</div>
+                              <div [hidden] *ngIf="email.errors.minlength">minimum length is 5</div>
+                       </div>
+                     
+              
+                      </div>
+                      <div class="section"><span>2</span>How was the quality of the food?</div>
+                      <div class="inner-wrap">
+                      <pre><input type="radio" name="r1"  #r1=ngModel value="poor" ngModel>Poor <input type="radio" name="r1" ngModel #r1=ngModel value="BelowAverage">Below average <input type="radio" name="r1" ngModel #r1=ngModel value="average">Average <input type="radio" name="r1" ngModel #r1=ngModel value="good">Good <input type="radio" name="r1" ngModel #r1=ngModel value="excellent">Excellent</pre>
+                      DESCRIPTION(Optional):<br>
+                      <textarea name='f1d'ngModel #f1d=ngModel ></textarea>
+                    </div>
+
+                    <div class="section"><span>3</span>How was the quantity of the food?</div>
+                      <div class="inner-wrap">
+                      <pre><input type="radio" name="r2"  #r2=ngModel value="poor" ngModel>Poor <input type="radio" name="r2" ngModel #r2=ngModel value="BelowAverage">Below average <input type="radio" name="r2" ngModel #r2=ngModel value="average">Average <input type="radio" name="r2" ngModel #r2=ngModel value="good">Good <input type="radio" name="r2" ngModel #r2=ngModel value="excellent">Excellent</pre>
+                      DESCRIPTION(Optional):<br>
+                      <textarea name='f2d'ngModel #f2d=ngModel ></textarea>
+                    </div>
+
+                    <div class="section"><span>4</span>How was the price?</div>
+                      <div class="inner-wrap">
+                      <pre><input type="radio" name="r3"  #r3=ngModel value="poor" ngModel>Poor <input type="radio" name="r3" ngModel #r3=ngModel value="BelowAverage">Below average <input type="radio" name="r3" ngModel #r3=ngModel value="average">Average <input type="radio" name="r3" ngModel #r3=ngModel value="good">Good <input type="radio" name="r3" ngModel #r3=ngModel value="excellent">Excellent</pre>
+                      DESCRIPTION(Optional):<br>
+                      <textarea name='f3d'ngModel #f3d=ngModel ></textarea>
+                    </div>
+
+                    <div class="section"><span>5</span>How was our service?</div>
+                      <div class="inner-wrap">
+                      <pre><input type="radio" name="r4"  #r4=ngModel value="poor" ngModel>Poor <input type="radio" name="r4" ngModel #r4=ngModel value="BelowAverage">Below average <input type="radio" name="r4" ngModel #r4=ngModel value="average">Average <input type="radio" name="r4" ngModel #r4=ngModel value="good">Good <input type="radio" name="r4" ngModel #r4=ngModel value="excellent">Excellent</pre>
+                      DESCRIPTION(Optional):<br>
+                      <textarea name='f4d'ngModel #f4d=ngModel ></textarea>
+                    </div>
+                   
+                   
+                  
+               <button>Sumbit</button>
+                  
+              
+
+              </div>
+              
+
+          </form>
+      </div>
+      
+      <router-outlet></router-outlet>

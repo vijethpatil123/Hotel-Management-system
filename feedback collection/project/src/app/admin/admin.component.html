@@ -1,0 +1,53 @@
+<html>
+    <div class="header" style="text-align:center">
+        <a href="/" id="logo">WELCOME</a>
+     
+    </div><br>
+    <br>
+    <br>
+  <table border=true class=t1>
+    <tr>
+      <th>Email Id</th>
+      <th>Quality</th>
+      <th>Quality Description</th>
+      <th>Quantity</th>
+      <th>Quntity Description</th>
+      <th>Price</th>
+      <th>Price Description</th>
+      <th>Service</th>
+      <th>Service Description</th>
+      </tr>
+      <tr *ngFor="let e of feedbacks">
+        <td>{{ e.emailId }}</td>
+        <td>{{ e.quality }}</td>
+        <td>  {{e.qualityDesc}}</td>
+        <td>{{ e.quantity }}</td>
+        <td>  {{e.quantityDesc}}</td>
+        <td>{{ e.price }}</td>
+        <td>  {{e.priceDesc}}</td>
+        <td>{{ e.service }}</td>
+        <td>  {{e.serviceDesc}}</td>
+
+      </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+
+  <button class=b1 onclick="document.getElementById('id01').style.display = 'block'">Delete</button>
+
+
+  <div class="form-popup" id="id01">
+      <form #f=ngForm (ngSubmit)="deleteFeedback(f)" class="form-container">
+        <h1>DELETE</h1>
+    
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter the emailId of the user" name="emailId" required  ngModel #emailId=ngModel  class=form-control>
+    
+        
+    
+        <button class="btn">Delete</button>
+        <a class="btn cancel" onclick="document.getElementById('id01').style.display = 'none'">Close</a>
+      </form>
+    </div>
+</html>

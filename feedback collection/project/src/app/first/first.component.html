@@ -1,0 +1,26 @@
+<html>
+<body class=bg >
+<div id="header" style="text-align:center">
+  <a href="/" id="logo">FOOD SERVICE FEEDBACK</a>
+  <ul id="menu">
+    <li><a onclick="document.getElementById('id01').style.display = 'block'" ><span>Admin</span></a></li>
+    <li><a routerLink="/user"><span>User</span></a></li>
+  </ul>
+</div>
+<div class="form-popup" id="id01">
+    <form #f=ngForm (ngSubmit)="loginAdmin(f)" class="form-container">
+      <h1>Login</h1>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter username" name="userName" required  ngModel #userName=ngModel  class=form-control>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="password" required ngModel #password=ngModel  class=form-control>
+  
+      <button class="btn">Login</button>
+      <a class="btn cancel" onclick="document.getElementById('id01').style.display = 'none'">Close</a>
+    </form>
+  </div>
+</body>
+
+</html>
